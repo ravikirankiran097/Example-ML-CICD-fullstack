@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ML Example App
+### An Example of how to deploy ML model and scale with kubernetes
 
-## Available Scripts
+## Requirements: Docker & Kubernetes
+Ensure that your kubectl is connected to a kubernetes cluster
+This can be done by modifying your kubectl config
+with a system path pointing to KUBECONFIG
+### Private Docker Registry
+You must have a docker registry for the docker images to be sent to.
+indicate the host to your docker registry in the file `docker-registry-address`
 
-In the project directory, you can run:
+## Local kubernetes setup
+If you dont have a kubernetes cluster, try microk8s
+And then install kubectl separately:
+#### Configure your kubectl with
+`cat microk8s.config >> ~/.kube/config`
+Then add `export KUBECONFIG=~/.kube/config`
+into your bashrc
+#### Installing Docker Registry
+On microk8s, enable docker registry with 
+`microk8s.enable registry`
 
-### `npm start`
+## Allowing docker to push to private docker registry
+Add the address of the docker private registry into your insecure-registries
+E.g http://localhost:32000
+For Mac/Windows:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```open the settings, goto the daemon tab and then pop in your registry’s URL in the “Insecure registries”``` 
+Restart docker
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### For Ubuntu:
+ 
+vim `/etc/docker/daemon.json`
+```
+{
+    "insecure-registries" : ["localhost:32000"]
+}
+```
+Restart your docker service with systemctl restart docker
 
-### `npm test`
+## Installation instructions
+Just run the included install.sh file
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`sh install.sh`
 
-### `npm run build`
+## Removal
+Just run the included uninstall.sh file
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`sh uninstall.sh`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Features
+1. Frontend --> UI built with ReactJS to request predictions
+2. Backend --> Backend built with Python Flask for 
+            
+            sanitize inputs
+            Track & record predictions
+            REST API for model serving
+            Requests Model Serving API
+            REST API for past predictions
+            
+3. Mushroom Model --> ML Pipeline built with MLFlow
+ 
+          Website for viewing model training / track models
+          WorkFlow for Training and deploying model
+          Model trained as a container
+          Model deployed as an isolated container
+          

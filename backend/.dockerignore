@@ -1,0 +1,21 @@
+# General files
+.git
+.github
+config
+
+# Test related files
+.tox
+tests
+htmlcov
+.coverage
+**/.coverage
+**/.coverage*
+
+# Other virtualization methods
+venv
+.venv
+.vagrant
+
+# Temporary files
+**/__pycache__
+.pytest_cache

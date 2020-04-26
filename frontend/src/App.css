@@ -1,0 +1,89 @@
+html, body {
+  background: url('https://compote.slate.com/images/84ef0b2a-f494-46d2-adb0-367d19488e9f.jpg') center center no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  margin: auto;
+  margin-top: 20px;
+  width: 50%;
+  height: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  left: 3%;
+  position: absolute;
+  color: black;
+}
+
+.history {
+
+  margin: auto;
+  margin-top: 20px;
+  width: 30%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  left: 66%;
+  position: absolute;
+  height: 80vh;
+  overflow: scroll;
+  color: black;
+}
+
+.title {
+  padding-top: 5vh;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 4em;
+  letter-spacing: 0.15rem;
+  color: #fff;
+  text-shadow: 2px 2px #000000;
+}
+
+#historicalPredictions {
+  text-align : center;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 100%
+}
+
+#historicalPredictions td, #historicalPredictions th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  max-width: 100px;
+  overflow-wrap: break-word;
+  color: black;
+
+}
+
+#historicalPredictions tr:nth-child(even){background-color: #f2f2f2;}
+#historicalPredictions tr:hover {background-color: #ddd;}
+#historicalPredictions th {
+  padding-top:12px;
+  padding-bottom:12px;
+  text-align:center;
+  background-color: #44CCAA;
+  color: black;
+}
+
+label {
+  color: #333;
+}
+
+.result-container {
+  text-align: left;
+  font-weight: 600;
+  font-size: 4em;
+  letter-spacing: 0.15rem;
+  padding: 20px 0 0;
+}
+
+#result {
+  color: #000;
+}

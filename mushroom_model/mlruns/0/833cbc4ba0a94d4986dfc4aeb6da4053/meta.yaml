@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ct-nasrudin/Documents/Github/nasdin/ml_example_app/mushroom_model/mlruns/0/833cbc4ba0a94d4986dfc4aeb6da4053/artifacts
+end_time: 1586092804694
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 833cbc4ba0a94d4986dfc4aeb6da4053
+run_uuid: 833cbc4ba0a94d4986dfc4aeb6da4053
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1586088528841
+status: 3
+tags: []
+user_id: ct-nasrudin

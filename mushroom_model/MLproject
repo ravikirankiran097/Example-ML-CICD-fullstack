@@ -1,0 +1,15 @@
+name: mushroom-model
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      dataset: {type: str, default: data/mushrooms.csv}
+      max-runs-xgb: {type: int, default: 15}
+      metric: {type: str, default: roc_auc}
+    command: |
+        python train.py \
+          {dataset} \
+          --max-runs-xgb={max-runs-xgb} \
+          --metric={metric}

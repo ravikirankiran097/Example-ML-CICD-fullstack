@@ -1,0 +1,18 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.4.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-ast  # Check valid python
+    -   id: check-builtin-literals
+    -   id: check-docstring-first
+    -   id: check-merge-conflict
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: detect-private-key
+    -   id: end-of-file-fixer  # Ensures that a file is either empty, or ends with one newline.
+    -   id: flake8
+        args: [--max-line-length=120]
+    -   id: name-tests-test
+    -   id: requirements-txt-fixer
+    -   id: trailing-whitespace

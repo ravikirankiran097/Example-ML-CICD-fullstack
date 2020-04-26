@@ -1,0 +1,7 @@
+flake8==3.7.9
+pre-commit==2.1.0
+pytest==5.3.5
+pytest-cov==2.8.1
+pytest-flask==0.15.1
+pytest-freezegun==0.4.1
+tox==3.14.5

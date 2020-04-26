@@ -1,0 +1,4 @@
+artifact_location: /home/ct-nasrudin/Documents/Github/nasdin/ml_example_app/mushroom_model/mlruns/0/6c9d20bcc2aa42748aee6072475350cc
+experiment_id: '1'
+lifecycle_stage: active
+name: mushroom_model
